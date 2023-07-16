@@ -1,6 +1,7 @@
-
+import sys
+input=sys.stdin.readline
 a,b=map(int,input().split())
-total=[list(input()) for i in range(b)]
+total=[list(input().rstrip()) for i in range(b)]
 cnt=0
 p=[]
 q=[]
