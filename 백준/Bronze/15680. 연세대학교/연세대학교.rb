@@ -1,0 +1,1 @@
+puts gets.to_i.zero? ? 'YONSEI' : 'Leading the Way to the Future'
