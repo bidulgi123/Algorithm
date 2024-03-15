@@ -12,7 +12,7 @@ if len(total) == 1 :
     else :
         print(1)
 else:
-    while start < a and end < a :
+    while end <= a :
         high=sum(total[start:end+1])
         if high < b :
             end+=1
