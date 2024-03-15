@@ -17,7 +17,6 @@ else:
         if high < b :
             end+=1
         else : 
-            print(total[start:end+1])
             cnt=min(cnt,end-start+1)
             start+=1
     if cnt == math.inf:
