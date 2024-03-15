@@ -1,25 +1,21 @@
 import sys
-import math
 input=sys.stdin.readline
-a,b=map(int,input().split())
-total=[int(input()) for i in range(a)]
-start=0
-end=1
-cnt=math.inf
-if len(total) == 1 :
-    if sum(total) < b : 
-        print('NEPAVYKS')
-    else :
-        print(1)
+n,s=map(int, input().split())
+nums=[int(input()) for i in range(n)]
+start, end=0, 0
+current_sum=0
+min_length=sys.maxsize
+while True:
+    if current_sum >= s:
+        min_length=min(min_length, end - start)
+        current_sum-=nums[start]
+        start+=1
+    elif end == n:
+        break
+    else:
+        current_sum+=nums[end]
+        end+=1
+if min_length == sys.maxsize:
+    print("NEPAVYKS")
 else:
-    while end <= a :
-        high=sum(total[start:end+1])
-        if high < b :
-            end+=1
-        else : 
-            cnt=min(cnt,end-start+1)
-            start+=1
-    if cnt == math.inf:
-        print('NEPAVYKS')
-    else :
-        print(cnt)
+    print(min_length)
