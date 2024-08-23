@@ -1,20 +1,18 @@
-from collections import deque
 a, b = map(int, input().split())
 c = list(map(int, input().split()))
 s, e = 0, 1 
-d = deque()
-d.append(c[0])
+d = c[s]
 l = 1
+cnt = 1
 while e < a :
-    if len(d) == 0 :
-        d.append(c[s])
-    if d[-1] != c[e] :
-        d.append(c[e])
+    if d != c[e] :
+        d = c[e]
         e+=1
-        l = max(l, len(d))
-    elif d[-1] == c[e] :
-        d = deque()
+        cnt += 1
+        l = max(l, cnt)
+    elif d == c[e] :
+        d = c[e]
         s = e
         e = s + 1
+        cnt = 1
 print(l)
-    
