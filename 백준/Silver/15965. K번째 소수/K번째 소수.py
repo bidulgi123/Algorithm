@@ -1,5 +1,5 @@
 a = int(input())
-p = 1000000 
+p = 10000000 
 t = [1 for _ in range(p)]  
 s = []  
 for i in range(2, p):
