@@ -1,0 +1,1 @@
+puts [3,4,5].zip((1..3).map{gets.to_i}).map{ _1*_2 }.sum
